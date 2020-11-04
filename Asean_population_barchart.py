@@ -1,5 +1,4 @@
 import csv
-from collections import OrderedDict
 import matplotlib.pyplot as plt
 
 # Following are the ASEAN countries
@@ -33,20 +32,18 @@ over_years = [
 
 def extract_data(file):
     """Return the population data for ASEAN countries in a OrderedDict"""
-    data = OrderedDict(
-        {
-            "Brunei Darussalam": [],
-            "Cambodia": [],
-            "Indonesia": [],
-            "Lao People's Democratic Republic": [],
-            "Malaysia": [],
-            "Myanmar": [],
-            "Philippines": [],
-            "Singapore": [],
-            "Thailand": [],
-            "Viet Nam": [],
-        }
-    )
+    data = {
+        "Brunei Darussalam": [],
+        "Cambodia": [],
+        "Indonesia": [],
+        "Lao People's Democratic Republic": [],
+        "Malaysia": [],
+        "Myanmar": [],
+        "Philippines": [],
+        "Singapore": [],
+        "Thailand": [],
+        "Viet Nam": [],
+    }
     with open(file, mode="r") as csv_file:
         csv_reader = csv.DictReader(csv_file, delimiter=",")
 
@@ -80,12 +77,7 @@ def graph_plot():
     ax.bar(bar1, values["Brunei Darussalam"], width, label="Brunei")
     ax.bar(bar2, values["Cambodia"], width, label="Combodia")
     ax.bar(bar3, values["Indonesia"], width, label="Indonesia")
-    ax.bar(
-        bar4,
-        values["Lao People's Democratic Republic"],
-        width,
-        label="Laos"
-        )
+    ax.bar(bar4, values["Lao People's Democratic Republic"], width, label="Laos")
     ax.bar(bar5, values["Malaysia"], width, label="Malaysia")
     ax.bar(bar6, values["Myanmar"], width, label="Myanmar")
     ax.bar(bar7, values["Philippines"], width, label="Philippins")
@@ -95,12 +87,7 @@ def graph_plot():
 
     # Add some Labels, Title and x-axis tick
     ax.set_title("Population Growth in ASEAN Countries")
-    ax.set_ylabel(
-        "Population",
-        {"size": 15, "color": "k"},
-        labelpad=10,
-        alpha=0.5
-        )
+    ax.set_ylabel("Population", {"size": 15, "color": "k"}, labelpad=10, alpha=0.5)
     ax.set_xlabel("Years", {"size": 15, "color": "k"}, labelpad=10, alpha=0.5)
     ax.set_xticks(bar5)
     ax.set_xticklabels(labels)
