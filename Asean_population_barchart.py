@@ -154,7 +154,7 @@ def graph_plot():
         zorder=2,
     )
 
-    # Add some Labels, Title and x-axis tick
+    # Add Title and x-axis tick, set frame dimensions, legend etc.
     ax.set_title(
         "Population Growth in ASEAN Countries for years 2004 - 2014",
         {"size": 20, "color": "b"},
@@ -165,15 +165,15 @@ def graph_plot():
         labelpad=10,
         alpha=0.5,
     )
-    ax.spines["top"].set_linewidth(1.7)
-    ax.spines["right"].set_linewidth(1.7)
-    ax.spines["bottom"].set_linewidth(1.7)
-    ax.spines["left"].set_linewidth(1.7)
     ax.grid(axis="y")
     ax.set_xlabel("Years", {"size": 20, "color": "k"}, labelpad=10, alpha=0.5)
     ax.set_xticks(bar5)
     ax.set_xticklabels(over_years)
     ax.legend(shadow=True, loc="upper right", bbox_to_anchor=(1.001, 1.009))
+    ax.spines["top"].set_linewidth(1.7)
+    ax.spines["right"].set_linewidth(1.7)
+    ax.spines["bottom"].set_linewidth(1.7)
+    ax.spines["left"].set_linewidth(1.7)
     fig.set_figwidth(8)
     return plt.show()
 

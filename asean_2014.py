@@ -1,5 +1,4 @@
 import csv
-from collections import OrderedDict
 import matplotlib.pyplot as plt
 
 asean_countries = [
@@ -30,7 +29,7 @@ def extract_data(file):
         "Viet Nam",
     ]
 
-    data = OrderedDict()
+    data = dict()
 
     with open(file, mode="r") as csv_file:
         csv_reader = csv.DictReader(csv_file)
@@ -49,6 +48,7 @@ def graph_plot():
     population = list(data.values())
 
     width = [0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75]
+    fig, ax = plt.subplots()
     plt.bar(
         asean_countries,
         population,
@@ -70,6 +70,12 @@ def graph_plot():
         "Population of ASEAN countries for year 2014",
         {"size": 20, "color": "b"},
     )
+    plt.xticks(fontsize=15)
+    plt.yticks(fontsize=12)
+    ax.spines["top"].set_linewidth(1.7)
+    ax.spines["right"].set_linewidth(1.7)
+    ax.spines["bottom"].set_linewidth(1.7)
+    ax.spines["left"].set_linewidth(1.7)
     return plt.show()
 
 

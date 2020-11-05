@@ -1,5 +1,4 @@
 import csv
-from collections import OrderedDict
 import matplotlib.pyplot as plt
 
 
@@ -31,7 +30,7 @@ over_years = [
 
 def extract_data(file_name):
 
-    data = OrderedDict()
+    data = dict()
     with open(file_name, mode="r") as csv_file:
         csv_reader = csv.DictReader(csv_file)
 
@@ -46,11 +45,11 @@ def graph_plot():
     # Data
     values = extract_data("population-estimates.csv")
     population = list(values.values())
-    labels = over_years
 
     width = [0.45, 0.45, 0.45, 0.45, 0.5, 0.55, 0.6, 0.6, 0.6, 0.6, 0.6]
+    fig, ax = plt.subplots()
     plt.bar(
-        labels,
+        over_years,
         population,
         width,
         color="orange",
@@ -70,6 +69,12 @@ def graph_plot():
         "SAARC countries population for year 2004 to 2014",
         {"size": 20, "color": "b"},
     )
+    plt.xticks(fontsize=15)
+    plt.yticks(fontsize=12)
+    ax.spines["top"].set_linewidth(1.7)
+    ax.spines["right"].set_linewidth(1.7)
+    ax.spines["bottom"].set_linewidth(1.7)
+    ax.spines["left"].set_linewidth(1.7)
     return plt.show()
 
 

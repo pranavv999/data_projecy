@@ -34,13 +34,24 @@ def extract_data(file):
 def graph_plot():
     # Data
     values = extract_data("population-estimates.csv")
-    labels = over_years
-
+    # width for each coloumn is different
     width = [0.45, 0.45, 0.45, 0.45, 0.5, 0.55, 0.57, 0.59, 0.61, 0.63, 0.65]
-    plt.bar(labels, values, width, color="orange", edgecolor="blue", zorder=2)
-
+    fig, ax = plt.subplots()
+    plt.bar(
+        over_years,
+        values,
+        width,
+        color="orange",
+        edgecolor="blue",
+        zorder=2,
+        )
     plt.grid(axis="y")
-    plt.xlabel("Year", {"size": 20, "color": "k"}, labelpad=10, alpha=0.5)
+    plt.xlabel(
+        "Year",
+        {"size": 20, "color": "k"},
+        labelpad=10,
+        alpha=0.5,
+        )
     plt.ylabel(
         "Population 1 x 10^6",
         {"size": 20, "color": "k"},
@@ -51,6 +62,12 @@ def graph_plot():
         "Indian population from year 2004 to 2014",
         {"size": 20, "color": "b"},
     )
+    plt.xticks(fontsize=15)
+    plt.yticks(fontsize=12)
+    ax.spines["top"].set_linewidth(1.7)
+    ax.spines["right"].set_linewidth(1.7)
+    ax.spines["bottom"].set_linewidth(1.7)
+    ax.spines["left"].set_linewidth(1.7)
     return plt.show()
 
 
