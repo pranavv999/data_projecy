@@ -31,7 +31,7 @@ over_years = [
 
 
 def extract_data(file):
-    """Return the population data for ASEAN countries in a OrderedDict"""
+    """Return the population data for ASEAN countries in a Dictionery"""
     data = {
         "Brunei Darussalam": [],
         "Cambodia": [],
@@ -77,99 +77,99 @@ def graph_plot():
         bar1,
         values["Brunei Darussalam"],
         width,
-        edgecolor='blue',
+        edgecolor="blue",
         label="Brunei",
         zorder=2,
-        )
+    )
     ax.bar(
         bar2,
         values["Cambodia"],
         width,
-        edgecolor='blue',
+        edgecolor="blue",
         label="Combodia",
         zorder=2,
-        )
+    )
     ax.bar(
         bar3,
         values["Indonesia"],
         width,
-        edgecolor='blue',
+        edgecolor="blue",
         label="Indonesia",
         zorder=2,
-        )
+    )
     ax.bar(
         bar4,
         values["Lao People's Democratic Republic"],
         width,
-        edgecolor='blue',
+        edgecolor="blue",
         label="Laos",
         zorder=2,
-        )
+    )
     ax.bar(
         bar5,
         values["Malaysia"],
         width,
-        edgecolor='blue',
+        edgecolor="blue",
         label="Malaysia",
         zorder=2,
-        )
+    )
     ax.bar(
         bar6,
         values["Myanmar"],
         width,
-        edgecolor='blue',
+        edgecolor="blue",
         label="Myanmar",
         zorder=2,
-        )
+    )
     ax.bar(
         bar7,
         values["Philippines"],
         width,
-        edgecolor='blue',
+        edgecolor="blue",
         label="Philippins",
         zorder=2,
-        )
+    )
     ax.bar(
         bar8,
         values["Singapore"],
         width,
-        edgecolor='blue',
+        edgecolor="blue",
         label="Singapore",
         zorder=2,
-        )
+    )
     ax.bar(
         bar9,
         values["Thailand"],
         width,
-        edgecolor='blue',
+        edgecolor="blue",
         label="Thailand",
         zorder=2,
-        )
+    )
     ax.bar(
         bar10,
         values["Viet Nam"],
         width,
-        edgecolor='blue',
+        edgecolor="blue",
         label="Vietnam",
         zorder=2,
-        )
+    )
 
     # Add some Labels, Title and x-axis tick
     ax.set_title(
         "Population Growth in ASEAN Countries for years 2004 - 2014",
         {"size": 20, "color": "b"},
-        )
+    )
     ax.set_ylabel(
         "Population",
         {"size": 20, "color": "k"},
         labelpad=10,
         alpha=0.5,
-        )
-    ax.spines['top'].set_linewidth(1.7)
-    ax.spines['right'].set_linewidth(1.7)
-    ax.spines['bottom'].set_linewidth(1.7)
-    ax.spines['left'].set_linewidth(1.7)
-    ax.grid(axis='y')
+    )
+    ax.spines["top"].set_linewidth(1.7)
+    ax.spines["right"].set_linewidth(1.7)
+    ax.spines["bottom"].set_linewidth(1.7)
+    ax.spines["left"].set_linewidth(1.7)
+    ax.grid(axis="y")
     ax.set_xlabel("Years", {"size": 20, "color": "k"}, labelpad=10, alpha=0.5)
     ax.set_xticks(bar5)
     ax.set_xticklabels(over_years)
