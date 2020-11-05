@@ -36,10 +36,10 @@ def graph_plot():
     values = extract_data("population-estimates.csv")
     labels = over_years
 
-    width = [0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8]
-    plt.bar(labels, values, width, color='orange', zorder=2)
+    width = [0.45, 0.45, 0.45, 0.45, 0.5, 0.55, 0.57, 0.59, 0.61, 0.63, 0.65]
+    plt.bar(labels, values, width, color="orange", edgecolor="blue", zorder=2)
 
-    plt.grid(axis='y')
+    plt.grid(axis="y")
     plt.xlabel("Year", {"size": 20, "color": "k"}, labelpad=10, alpha=0.5)
     plt.ylabel(
         "Population 1 x 10^6",

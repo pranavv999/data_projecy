@@ -58,11 +58,10 @@ def extract_data(file):
 def graph_plot():
     # Data
     values = extract_data("population-estimates.csv")
-    labels = over_years
     # width of the bar
     width = 0.37
     # Label Locations
-    bar1 = [(i * 4) for i in range(len(labels))]
+    bar1 = [(i * 4) for i in range(len(over_years))]
     bar2 = [(i + width) for i in bar1]
     bar3 = [(i + width * 2) for i in bar1]
     bar4 = [(i + width * 3) for i in bar1]
@@ -74,35 +73,108 @@ def graph_plot():
     bar10 = [(i + width * 9) for i in bar1]
 
     fig, ax = plt.subplots()
-    ax.bar(bar1, values["Brunei Darussalam"], width, label="Brunei")
-    ax.bar(bar2, values["Cambodia"], width, label="Combodia")
-    ax.bar(bar3, values["Indonesia"], width, label="Indonesia")
+    ax.bar(
+        bar1,
+        values["Brunei Darussalam"],
+        width,
+        edgecolor='blue',
+        label="Brunei",
+        zorder=2,
+        )
+    ax.bar(
+        bar2,
+        values["Cambodia"],
+        width,
+        edgecolor='blue',
+        label="Combodia",
+        zorder=2,
+        )
+    ax.bar(
+        bar3,
+        values["Indonesia"],
+        width,
+        edgecolor='blue',
+        label="Indonesia",
+        zorder=2,
+        )
     ax.bar(
         bar4,
         values["Lao People's Democratic Republic"],
         width,
-        label="Laos"
+        edgecolor='blue',
+        label="Laos",
+        zorder=2,
         )
-    ax.bar(bar5, values["Malaysia"], width, label="Malaysia")
-    ax.bar(bar6, values["Myanmar"], width, label="Myanmar")
-    ax.bar(bar7, values["Philippines"], width, label="Philippins")
-    ax.bar(bar8, values["Singapore"], width, label="Singapore")
-    ax.bar(bar9, values["Thailand"], width, label="Thailand")
-    ax.bar(bar10, values["Viet Nam"], width, label="Vietnam")
+    ax.bar(
+        bar5,
+        values["Malaysia"],
+        width,
+        edgecolor='blue',
+        label="Malaysia",
+        zorder=2,
+        )
+    ax.bar(
+        bar6,
+        values["Myanmar"],
+        width,
+        edgecolor='blue',
+        label="Myanmar",
+        zorder=2,
+        )
+    ax.bar(
+        bar7,
+        values["Philippines"],
+        width,
+        edgecolor='blue',
+        label="Philippins",
+        zorder=2,
+        )
+    ax.bar(
+        bar8,
+        values["Singapore"],
+        width,
+        edgecolor='blue',
+        label="Singapore",
+        zorder=2,
+        )
+    ax.bar(
+        bar9,
+        values["Thailand"],
+        width,
+        edgecolor='blue',
+        label="Thailand",
+        zorder=2,
+        )
+    ax.bar(
+        bar10,
+        values["Viet Nam"],
+        width,
+        edgecolor='blue',
+        label="Vietnam",
+        zorder=2,
+        )
 
     # Add some Labels, Title and x-axis tick
-    ax.set_title("Population Growth in ASEAN Countries")
+    ax.set_title(
+        "Population Growth in ASEAN Countries for years 2004 - 2014",
+        {"size": 20, "color": "b"},
+        )
     ax.set_ylabel(
         "Population",
-        {"size": 15, "color": "k"},
+        {"size": 20, "color": "k"},
         labelpad=10,
-        alpha=0.5)
-    ax.set_xlabel("Years", {"size": 15, "color": "k"}, labelpad=10, alpha=0.5)
+        alpha=0.5,
+        )
+    ax.spines['top'].set_linewidth(1.7)
+    ax.spines['right'].set_linewidth(1.7)
+    ax.spines['bottom'].set_linewidth(1.7)
+    ax.spines['left'].set_linewidth(1.7)
+    ax.grid(axis='y')
+    ax.set_xlabel("Years", {"size": 20, "color": "k"}, labelpad=10, alpha=0.5)
     ax.set_xticks(bar5)
-    ax.set_xticklabels(labels)
-    ax.legend(loc="upper right", bbox_to_anchor=(1, 1))
+    ax.set_xticklabels(over_years)
+    ax.legend(shadow=True, loc="upper right", bbox_to_anchor=(1.001, 1.009))
     fig.set_figwidth(8)
-    # return plt.savefig("mygraph.png")
     return plt.show()
 
 

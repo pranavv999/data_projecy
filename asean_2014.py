@@ -49,7 +49,14 @@ def graph_plot():
     population = list(data.values())
 
     width = [0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75]
-    plt.bar(asean_countries, population, width, color="orange", zorder=2)
+    plt.bar(
+        asean_countries,
+        population,
+        width,
+        color="orange",
+        edgecolor="blue",
+        zorder=2,
+    )
 
     plt.grid(axis="y")
     plt.xlabel("Countries", {"size": 20, "color": "k"}, labelpad=10, alpha=0.5)
