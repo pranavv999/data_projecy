@@ -2,18 +2,18 @@ import csv
 import matplotlib.pyplot as plt
 
 # Following are the ASEAN countries
-asean_countries = [
-    "Brunei",
-    "Combodia",
-    "Indonesia",
-    "Laos",
-    "Malaysia",
-    "Myanmar",
-    "Philippines",
-    "Singapore",
-    "Thailand",
-    "Vietnam",
-]
+# asean_countries = [
+#     "Brunei",
+#     "Combodia",
+#     "Indonesia",
+#     "Laos",
+#     "Malaysia",
+#     "Myanmar",
+#     "Philippines",
+#     "Singapore",
+#     "Thailand",
+#     "Vietnam",
+# ]
 # We are refering data from year 2004 to 2014
 over_years = [
     "2004",

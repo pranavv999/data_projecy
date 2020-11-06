@@ -70,6 +70,7 @@ def graph_plot():
         "Population of ASEAN countries for year 2014",
         {"size": 20, "color": "b"},
     )
+    # plt.xticks(fontsize=15, rotation=-45)
     plt.xticks(fontsize=15)
     plt.yticks(fontsize=12)
     ax.spines["top"].set_linewidth(1.7)
