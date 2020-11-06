@@ -1,6 +1,7 @@
 import csv
 import matplotlib.pyplot as plt
 
+# Following are the ASEAN countries
 asean_countries = [
     "Brunei",
     "Combodia",
@@ -16,6 +17,7 @@ asean_countries = [
 
 
 def extract_data(file):
+    """Return the population data for ASEAN countries for year 2004"""
     countries = [
         "Brunei Darussalam",
         "Cambodia",
@@ -46,7 +48,7 @@ def graph_plot():
     # Data
     data = extract_data("population-estimates.csv")
     population = list(data.values())
-
+    # width for each coloumn is different
     width = [0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75]
     fig, ax = plt.subplots()
     plt.bar(
@@ -57,7 +59,7 @@ def graph_plot():
         edgecolor="blue",
         zorder=2,
     )
-
+    # Add Title and x-axis tick, set frame dimensions etc.
     plt.grid(axis="y")
     plt.xlabel("Countries", {"size": 20, "color": "k"}, labelpad=10, alpha=0.5)
     plt.ylabel(

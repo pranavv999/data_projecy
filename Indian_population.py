@@ -18,8 +18,8 @@ over_years = [
 
 
 def extract_data(file):
+    """Return the population data for India for year 2004 to 2014"""
     data = []
-
     with open(file, mode="r") as csv_file:
         csv_reader = csv.DictReader(csv_file)
 
@@ -45,6 +45,7 @@ def graph_plot():
         edgecolor="blue",
         zorder=2,
         )
+    # Add Title and x-axis tick, set frame dimensions etc.
     plt.grid(axis="y")
     plt.xlabel(
         "Year",

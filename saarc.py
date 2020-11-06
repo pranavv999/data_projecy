@@ -29,7 +29,7 @@ over_years = [
 
 
 def extract_data(file_name):
-
+    """Return the population data for SAARC countries for year 2004 to 2014"""
     data = dict()
     with open(file_name, mode="r") as csv_file:
         csv_reader = csv.DictReader(csv_file)
@@ -45,7 +45,7 @@ def graph_plot():
     # Data
     values = extract_data("population-estimates.csv")
     population = list(values.values())
-
+    # width for each coloumn is different
     width = [0.45, 0.45, 0.45, 0.45, 0.5, 0.55, 0.6, 0.6, 0.6, 0.6, 0.6]
     fig, ax = plt.subplots()
     plt.bar(
@@ -56,7 +56,7 @@ def graph_plot():
         edgecolor="blue",
         zorder=2,
     )
-
+    # Add Title and x-axis tick, set frame dimensions etc.
     plt.grid(axis="y")
     plt.xlabel("Year", {"size": 20, "color": "k"}, labelpad=10, alpha=0.5)
     plt.ylabel(

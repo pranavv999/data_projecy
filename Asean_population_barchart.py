@@ -31,7 +31,7 @@ over_years = [
 
 
 def extract_data(file):
-    """Return the population data for ASEAN countries in a Dictionery"""
+    """Return the population data for ASEAN countries for year 2004 to 2014"""
     data = {
         "Brunei Darussalam": [],
         "Cambodia": [],
@@ -174,7 +174,6 @@ def graph_plot():
     ax.spines["right"].set_linewidth(1.7)
     ax.spines["bottom"].set_linewidth(1.7)
     ax.spines["left"].set_linewidth(1.7)
-    fig.set_figwidth(8)
     return plt.show()
 
 
